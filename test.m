@@ -3,7 +3,7 @@ function K=test(RR,beta,fmin,fmax)
 %beta is the signal-to-noise ratio
 %[fmin, fmax] is the interval in which K is computed
 N=length(RR);
-ncut=N/10;
+ncut=floor(N/10);
 F=(fmax-fmin).*rand(100,1)+fmin;
 lambda=2; miu=3;
 g_beta=(ncut/10)*sqrt(lambda/(2*pi*(0.1*beta)^3))*exp(-lambda*((0.1*beta-miu)^2)/(2*miu^2*0.1*beta));
