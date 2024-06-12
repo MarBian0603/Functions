@@ -8,7 +8,7 @@ RR_interp=interp1(tt,RR,tt_interp);
 RR_interp=RR_interp(2:10:end);
 RR=RR_interp;
 
-%sigma estimation using the code at https://github.com/AndScar/noise_estimation
+%sigma estimation using the code at [GitHub Pages](https://github.com/AndScar/noise_estimation).
 [sigma,~,~,~,~]=Noise_evaluation_fit_pp(RR,2,0.001,peak2peak(RR));
 
 beta=range(RR)/sigma;
