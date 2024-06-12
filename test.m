@@ -13,8 +13,7 @@ parfor i=1:100
     [p,q]=compute_pq(RR,f);
     M=compute_M(RR,p,q);
     D=M-mean(RR)^2*(1-cos((1:ncut)*f))/(1-cos(f));
-    Dstar=D+beta*mean(RR)^2*sin(sqrt(2)*(1:ncut));
-    %Dstar=D+g_beta*mean(RR)^2*sin(sqrt(2)*(1:ncut));
+    Dstar=D+g_beta*mean(RR)^2*sin(sqrt(2)*(1:ncut));
     K_f(i)=corr((1:ncut)',Dstar');
 end
 K=median(K_f);
