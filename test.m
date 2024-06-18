@@ -5,7 +5,7 @@ function K=test(phi,beta,fmin,fmax)
 % beta - the signal-to-noise ratio
 % fmin and fmax - the extreme values of the interval in which K is computed
 
-N=length(RR);
+N=length(phi);
 ncut=floor(N/10);
 F=(fmax-fmin).*rand(100,1)+fmin;
 lambda=2; miu=3;
