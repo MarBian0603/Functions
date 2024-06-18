@@ -3,8 +3,10 @@
 % with a parameter lambda (or alpha), starting from a random initial 
 % value x in [0,1]; 
 
-N=10000;
-lambda=3.5; %alpha=0.2 for Pomeau-Manneville map
+fs=50; %sampling frequency
+t=[0:1/fs:200];    
+N=length(t);
+lambda=3.5; %alpha=0.2 for the Pomeau-Manneville map
 x=rand(1,1);
 phi_nn=Logistic_dyn(x,lambda,N,0*randn(1,N));
 % phi_nn=Pomeau_dyn(x,lambda,N,0*randn(1,N)); % For the Pomeau-Manneville map
@@ -23,8 +25,12 @@ scatter(p,q,'.','linewidth',2)
 %compute the signal-to-noise ratio
 beta=range(RR)/sigma;
 
-%compute 
-
+%compute the frequency band
+freq=linspace(0,fs/2,(l+1)/2)*4*pi/fs;
+F=fft(phi-mean(phi));
+p2=abs(F);
+p1=p2(1:(l+1)/2);
+f=choose_f(freq,p1);
 fmin=f-0.5; fmax=f+0.5;
 
 %compute the value K
