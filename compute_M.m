@@ -1,7 +1,9 @@
-function M=compute_M(RR,p,q)
-%RR is the signal
-%p and q are the vectors computed by the function compute_pq(RR,f) 
-N=length(RR);
+function M=compute_M(phi,p,q)
+%This function computes the mean square displacement M.
+%The function takes as inputs:
+%phi - the signal
+%p and q - the vectors computed by the function compute_pq(phi,f) 
+N=length(phi);
 ncut=floor(N/10);
 M=zeros(1,ncut);
 for n=1:ncut
