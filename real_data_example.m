@@ -15,6 +15,7 @@ N=length(RR);
 scatter(p,q,'.','linewidth',2)
 
 % sigma estimation using the code at https://github.com/AndScar/noise_estimation
+% see README.md for more info
 [sigma,~,~,~,~]=Noise_evaluation_fit_pp(RR,2,0.001,peak2peak(RR));
 
 % compute the signal-to-noise ratio
