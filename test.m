@@ -1,5 +1,5 @@
 function K=test(phi,beta,fmin,fmax)
-%% This function computes the value K.
+% This function computes the value K.
 % The function takes as inputs:
 % phi - the signal
 % beta - the signal-to-noise ratio
