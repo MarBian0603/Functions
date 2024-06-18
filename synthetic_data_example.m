@@ -19,7 +19,7 @@ noise=0.02*peak2peak(phi_nn)*randn(size(phi_nn));
 phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,lambda,N,noise) %for the Pomeau-Manneville map
 
 %plot of the p-q phase space
-[p,q]=compute_pq(phi);
+[p,q]=compute_pq(phi,1);
 scatter(p,q,'.','linewidth',2)
 
 %compute the signal-to-noise ratio
