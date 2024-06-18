@@ -8,7 +8,7 @@ Pomeau_dyn.m generates noisy series from Pomeau-Manneville maps.
 Logistic_dyn.m generates noisy series from Logistic maps.
 
 test.m performs the computation of the value K. 
-compute_pq.m and compute_M.m are used in test.m function.
+The functions compute_pq.m and compute_M.m are used in test.m .
 
 choose_f.m is used to compute the frequency band for synthetic time series.
 
