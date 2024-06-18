@@ -23,7 +23,7 @@ phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,lambda,N,noise) %for the P
 scatter(p,q,'.','linewidth',2)
 
 %compute the signal-to-noise ratio
-beta=range(RR)/sigma;
+beta=range(phi)/sigma;
 
 %compute the frequency band
 freq=linspace(0,fs/2,(l+1)/2)*4*pi/fs;
@@ -34,4 +34,4 @@ f=choose_f(freq,p1);
 fmin=f-0.5; fmax=f+0.5;
 
 %compute the value K
-K=test(RR,beta,fmin,fmax);
+K=test(phi,beta,fmin,fmax);
