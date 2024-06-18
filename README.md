@@ -1,7 +1,7 @@
 The repository contains a MATLAB code for computing the value K with some examples.
 Before using this code it is mandatory to download the functions at https://github.com/AndScar/noise_estimation.
 
-In syntheti_data_example.m there are some examples of the application of the code to noisy synthetic series.
+In synthetic_data_example.m there are some examples of the application of the code to noisy synthetic series.
 In real_data_example.m there are some examples of the application of the code to real series.
 
 Pomeau_dyn.m generates noisy series from Pomeau-Manneville maps.
