@@ -26,10 +26,10 @@ scatter(p,q,'.','linewidth',2)
 beta=range(phi)/sigma;
 
 % compute the frequency band
-freq=linspace(0,fs/2,(l+1)/2)*4*pi/fs;
+freq=linspace(0,fs/2,(N+1)/2)*4*pi/fs;
 F=fft(phi-mean(phi));
 p2=abs(F);
-p1=p2(1:(l+1)/2);
+p1=p2(1:(N+1)/2);
 f=choose_f(freq,p1);
 fmin=f-0.5; fmax=f+0.5;
 
