@@ -13,7 +13,8 @@ phi_nn=Logistic_dyn(x,lambda,N,0*randn(1,N));
 
 % Generate the Gaussian noise whose std is a percentage of the amplitude of
 % the series
-noise=0.02*peak2peak(phi_nn)*randn(size(phi_nn));
+sigma=0.02;
+noise=sigma*peak2peak(phi_nn)*randn(size(phi_nn));
 
 % Perturb the series with Dynamical noise
 phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,lambda,N,noise) %for the Pomeau-Manneville map
