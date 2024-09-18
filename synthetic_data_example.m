@@ -9,7 +9,7 @@ N=length(t);
 lambda=3.5; %gamma=0.2 for the Pomeau-Manneville map
 x=rand(1,1);
 phi_nn=Logistic_dyn(x,lambda,N,0*randn(1,N));
-% phi_nn=Pomeau_dyn(x,lambda,N,0*randn(1,N)); % For the Pomeau-Manneville map
+% phi_nn=Pomeau_dyn(x,gamma,N,0*randn(1,N)); % For the Pomeau-Manneville map
 
 % Generate the Gaussian noise whose std is a percentage of the amplitude of
 % the series
@@ -17,7 +17,7 @@ sigma=0.02;
 noise=sigma*peak2peak(phi_nn)*randn(size(phi_nn));
 
 % Perturb the series with Dynamical noise
-phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,lambda,N,noise) %for the Pomeau-Manneville map
+phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,gamma,N,noise) %for the Pomeau-Manneville map
 
 % plot of the p-q phase space
 [p,q]=compute_pq(phi,1);
