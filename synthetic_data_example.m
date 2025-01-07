@@ -14,7 +14,8 @@ phi_nn=Logistic_dyn(x,lambda,N,0*randn(1,N));
 % Generate the Gaussian noise whose std is a percentage of the amplitude of
 % the series
 sigma=0.02;
-noise=sigma*peak2peak(phi_nn)*randn(size(phi_nn));
+sd=sigma*peak2peak(phi_nn);
+noise=sd*randn(size(phi_nn));
 
 % Perturb the series with Dynamical noise
 phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,gamma,N,noise) %for the Pomeau-Manneville map
@@ -24,7 +25,7 @@ phi=Logistic_dyn(x,lambda,N,noise); %phi=Pomeau_dyn(x,gamma,N,noise) %for the Po
 scatter(p,q,'.','linewidth',2)
 
 % compute the signal-to-noise ratio
-beta=range(phi)/sigma;
+beta=range(phi)/sd;
 
 % compute the frequency band
 freq=linspace(0,fs/2,(N+1)/2)*4*pi/fs;
